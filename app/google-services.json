@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "265931530027",
+    "project_id": "mrgs-management-app",
+    "storage_bucket": "mrgs-management-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265931530027:android:e57dbdc1484dfb4f4aaf6e",
+        "android_client_info": {
+          "package_name": "com.example.mrgsmanagementapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265931530027-o8c0irgd5k86m43vrsn6gin3gu670o9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJvrD-6wZsHB583dvbjWZmaaqM-9SaFEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265931530027-o8c0irgd5k86m43vrsn6gin3gu670o9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
