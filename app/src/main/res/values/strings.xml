@@ -9,4 +9,7 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="register">Register</string>
     <string name="have_account">Already Have an Account?</string>
+    <string name="calendar">Calendar</string>
+    <string name="notes">Notes</string>
+    <string name="todolist">To Do List</string>
 </resources>

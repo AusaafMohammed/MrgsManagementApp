@@ -12,4 +12,6 @@
     <!--- Colours I Added -->
     <color name="pink">#FF69B4</color>
     <color name="cyan">#33C9DD</color>
+    <color name="blue">#1e90ff</color>
+    <color name="hot_pink">#ff1493</color>
 </resources>
