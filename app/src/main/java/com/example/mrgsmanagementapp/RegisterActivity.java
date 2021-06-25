@@ -1,21 +1,23 @@
 package com.example.mrgsmanagementapp;
 
-import androidx.annotation.NonNull;
+//import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+//import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+//import com.google.android.gms.tasks.OnCompleteListener;
+//import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.AuthResult;
+//import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -38,26 +40,17 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         mLoadingBar=new ProgressDialog(this);
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AtemptRegistration();
-
-            }
-        });
-        AlreadyHaveAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(RegisterActivity.this,LoginActivity.class);
-                startActivity(intent);
-            }
+        btnRegister.setOnClickListener(v -> AtemptRegistration());
+        AlreadyHaveAccount.setOnClickListener(v -> {
+            Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
         });
     }
 
     private void AtemptRegistration() {
-        String email=inputEmail.getEditText().getText().toString();
-        String password=inputPassword.getEditText().getText().toString();
-        String confirmPassword=inputConfirmPassword.getEditText().getText().toString();
+        String email= Objects.requireNonNull(inputEmail.getEditText()).getText().toString();
+        String password= Objects.requireNonNull(inputPassword.getEditText()).getText().toString();
+        String confirmPassword= Objects.requireNonNull(inputConfirmPassword.getEditText()).getText().toString();
 
         if (email.isEmpty() || !email.contains("@students.mrgs.school.nz"))
         {
@@ -76,24 +69,21 @@ public class RegisterActivity extends AppCompatActivity {
             mLoadingBar.setMessage("Please Wait, Loading soon!");
             mLoadingBar.setCanceledOnTouchOutside(false);
             mLoadingBar.show();
-            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful())
-                    {
-                        mLoadingBar.dismiss();
-                        Toast.makeText(RegisterActivity.this, "Registration is Successful", Toast.LENGTH_SHORT).show();
-                        Intent intent=new Intent(RegisterActivity.this,MainActivity.class);
-                        //Change mainactivity to setupactivity later
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                        finish();
-                    }
-                    else
-                    {
-                        mLoadingBar.dismiss();
-                        Toast.makeText(RegisterActivity.this, "Registration is Failed", Toast.LENGTH_SHORT).show();
-                    }
+            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
+                if(task.isSuccessful())
+                {
+                    mLoadingBar.dismiss();
+                    Toast.makeText(RegisterActivity.this, "Registration is Successful", Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(RegisterActivity.this, LogoutActivity.class);
+                    //Change mainactivity to setupactivity later
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+                else
+                {
+                    mLoadingBar.dismiss();
+                    Toast.makeText(RegisterActivity.this, "Registration is Failed", Toast.LENGTH_SHORT).show();
                 }
             });
         }

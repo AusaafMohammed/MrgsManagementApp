@@ -2,9 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.MrgsManagementApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+<!--        This code is for changing color of background-->
+        <item name="colorPrimary">@color/black</item>
+<!--        This code is for changing color of the Status Bar-->
+        <item name="colorPrimaryVariant">@color/black</item>
+<!--        This part of the code is for changing text color-->
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>

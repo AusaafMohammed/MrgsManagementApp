@@ -12,4 +12,6 @@
     <string name="calendar">Calendar</string>
     <string name="notes">Notes</string>
     <string name="todolist">To Do List</string>
+    <string name="remember_me">Remember me</string>
+    <string name="logout">Log Out</string>
 </resources>
