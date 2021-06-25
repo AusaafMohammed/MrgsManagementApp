@@ -17,14 +17,11 @@ public class SplashActivity extends AppCompatActivity {
         //This removes our status bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Runnable runnable=new Runnable() {
-            @Override
-            public void run() {
-                Intent intent=new Intent(SplashActivity.this,LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                finish();
-            }
+        Runnable runnable= () -> {
+            Intent intent=new Intent(SplashActivity.this,LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
         };
         Handler handler=new Handler();
         handler.postDelayed(runnable,3000);

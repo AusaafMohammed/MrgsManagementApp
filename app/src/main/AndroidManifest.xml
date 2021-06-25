@@ -10,16 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MrgsManagementApp">
         <activity android:name=".LogoutActivity" />
-        <activity android:name=".MainActivity2" />
-        <activity android:name=".SetupActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".MainActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".SetupActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SplashActivity">
+
         </activity>
         <activity android:name=".MainActivity" />
     </application>
