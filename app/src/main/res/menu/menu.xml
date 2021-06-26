@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/todolist"
+<!--    The Items my bottom navigation bar contains -->
+    <item
+        android:id="@+id/todolist"
         android:icon="@drawable/ic_baseline_format_list_bulleted_24"
-        android:title="To Do List"></item>
-    <item android:id="@+id/notes"
+        android:title="@string/todolist" />
+    <item
+        android:id="@+id/notes"
         android:icon="@drawable/ic_baseline_notes_24"
-        android:title="Notes"></item>
-    <item android:id="@+id/calendar"
+        android:title="@string/notes" />
+    <item
+        android:id="@+id/calendar"
         android:icon="@drawable/ic_baseline_calendar_today_24"
-        android:title="Upcoming Assessments"></item>
+        android:title="@string/calendar" />
 
 </menu>

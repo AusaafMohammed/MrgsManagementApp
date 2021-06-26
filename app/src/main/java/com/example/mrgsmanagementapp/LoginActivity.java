@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 //import android.view.View;
+//import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 //import android.widget.CompoundButton;
@@ -41,17 +42,22 @@ public class LoginActivity extends AppCompatActivity {
         inputEmail=findViewById(R.id.inputEmail);
         inputPassword=findViewById(R.id.inputPassword);
         btnLogin=findViewById(R.id.btnLogin);
-        forgotPassword=findViewById(R.id.forgotPassword);
         CreateNewAccount=findViewById(R.id.CreateNewAccount);
         remember_me=findViewById(R.id.remember_me);
         mLoadingBar=new ProgressDialog(this);
         mAuth=FirebaseAuth.getInstance();
 
+        forgotPassword=findViewById(R.id.forgotPassword);
+        forgotPassword.setOnClickListener(v -> {
+            Intent intent = new Intent (LoginActivity.this,ForgotPassword.class);
+            startActivity(intent);
+        });
+
 //      This part of the code is for checkbox
         SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
         String checkbox = preferences.getString("remember_me","");
         if(checkbox.equals("true")){
-            Intent intent = new Intent(LoginActivity.this, LogoutActivity.class);
+            Intent intent = new Intent(LoginActivity.this, MainActivity2.class);
             startActivity(intent);
 //        }else if(checkbox.equals("false")) {
 //            Toast.makeText(this, "Please Sign In!", Toast.LENGTH_SHORT).show();
@@ -110,7 +116,7 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     mLoadingBar.dismiss();
                     Toast.makeText(LoginActivity.this, "Login is Successful", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(LoginActivity.this,LogoutActivity.class);
+                    Intent intent=new Intent(LoginActivity.this,MainActivity2.class);
                     //Change mainactivity to setupactivity later
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK| Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
@@ -131,4 +137,5 @@ public class LoginActivity extends AppCompatActivity {
         field.requestFocus();
     }
 //  Login Part Ends
+
 }

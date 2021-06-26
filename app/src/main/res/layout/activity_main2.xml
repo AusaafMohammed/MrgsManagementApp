@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+<!--I used FrameLayout as I will be using fragments for my app and to have them in a container-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/fragment_container"
         android:layout_above="@+id/bottom_nav"/>
 
-
+<!-- This Part of the code is for the design of the bottom navigation view and aligning it at bottom-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:background="?android:attr/windowBackground"
         android:layout_width="match_parent"
