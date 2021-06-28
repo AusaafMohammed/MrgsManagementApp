@@ -18,5 +18,6 @@ public class ToDoListFragment  extends Fragment {
     @Override
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_todolist,container,false);
+
     }
 }
